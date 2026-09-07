@@ -84,7 +84,7 @@ Muchas personas quieren construir y mantener hábitos de estudio, pero carecen d
   }
   ```
 - **RF-5.3**: CUANDO el archivo `habits_data.json` no exista al momento de consultar o registrar datos, EL SISTEMA DEBE crearlo automáticamente con una lista vacía de hábitos (`{"habits": []}`).
-- **RF-5.4**: SI el archivo `habits_data.json` existe pero contiene un formato inválido, JSON corrupto o tipos de datos alterados que no respeten el esquema (ej.: `habits` no es lista, `completed_dates` no es lista de strings de fecha ISO 8601), ENTONCES EL SISTEMA DEBE detener la operación y mostrar un mensaje de error explícito advirtiendo sobre la corrupción o formato inválido sin sobrescribir los datos dañados (salida 1).
+- **RF-5.4**: SI el archivo `habits_data.json` existe, pero contiene un formato inválido, JSON corrupto o tipos de datos alterados que no respeten el esquema (ej.: `habits` no es lista, `completed_dates` no es lista de strings de fecha ISO 8601), ENTONCES EL SISTEMA DEBE detener la operación y mostrar un mensaje de error explícito advirtiendo sobre la corrupción o formato inválido sin sobrescribir los datos dañados (salida 1).
 - **RF-5.5**: EL SISTEMA DEBE aplicar persistencia atómica (escritura en archivo temporal y reemplazo seguro con `os.replace`) para evitar corrupción de datos en caso de interrupciones abruptas del proceso.
 
 ---
